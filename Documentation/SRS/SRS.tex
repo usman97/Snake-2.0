@@ -1,0 +1,440 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\title{SE 3XA3: Software Requirements Specification\\\textcolor{red}{Snake 2.o}}
+
+\author{Team 30, VUA
+		\\ Andy Hameed | hameea1
+		\\ Usman Irfan | irfanm7
+		\\ Vaibhav Chadah | chadhav
+}
+
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Oct 5, 2018 & 1.0 & Andy worked on Project Drivers and Project Issues. Usman worked on Functional requirements. Vaibhav worked on Non-Functional Requirements\\
+\textcolor{red}{Dec 2, 2018} & 1.1 & Vaibhav is performing revision 1 in order to improve the quality of the document\\
+\textcolor{red}{Dec 2, 2018} & 1.1 & Andy edited the formatting issues stated in feedback for Revision 1 | Edited Health and Safety NF requirement\\
+\textcolor{red}{Dec 2, 2018} & 1.1 & Usman is performing revision 1 in order to improve the quality of the document\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+This document describes the requirements for Snake 2.o The template for the Software
+Requirements Specification (SRS) is a subset of the Volere
+template~\citep{RobertsonAndRobertson2012}.  If you make further modifications
+to the template, you should explicity state what modifications were made.
+
+\section{Project Drivers}
+
+\subsection{The Purpose of the Project}
+
+Almost everyone nowadays relies on a computer as a multipurpose tool for research, video streaming, gaming and many other tasks. With the emergence of fast computing, gaming has become a popular pastime activity and a source of entertainment for many. However, not everyone has a device powerful enough to support extensive game applications. A simple, memory-effecient application of the Snake game allows it to be accessible for gamers without the need for extensive hardware or a high-performance computer. Our team, VUA30, will be creating a desktop application for the well-known “Snake” game with new enhancements and features. This competitive and addictive game can allow the user to play at their own pace and challenge their own high score. 
+
+Buying a computing device with high storage and faster performance can be out of budget. Complicated software covers up all the storage and the user is bound to use these applications as opposed to downloading other software. The importance of the redevelopment of “The Snake” is to save computing device’s personal storage and allow the user to play a game 24/7 with strong performance, even offline. Creating a desktop version of the snake game can fit into the category of downloadable calssical games such as the solitaire suite. The recreation of this game will allow the user to enjoy the classical game anytime and anywhere as long as they have installed the application. Improving aspects such as graphics and custom speed will also make the game more interesting. We would like to add more features to the game to make it more customizable and help people enjoy the classical game in an exciting and new way. 
+
+\subsection{The Stakeholders}
+
+Stakeholders involved will be contained within the gaming community, more specifically the desktop gaming community and casual PC owners who are 
+looking for a fun reliever for boredom or quick game to play.This also includes members invested in the project which are mentioned in the subsesctions below.
+
+\subsubsection{The Client}
+
+Since this game is a separate entity, the clients are the designers in this project team. In further developments and upon increase in game popularity, the clients 
+could be a desktop gaming distribution service such as steam, google play or apple store. Otherwise, the main client would be Dr. Bokhari who has assigned the project.
+
+\subsubsection{The Customers}
+
+The main users or customers  are desktop gamers, older generation of game enthusiasts, youth and teens. However, the client can be anyone with a PC and an interest in classical gaming or a sudden craving for playing the classical Snake game. Often times, these games are a quick fix to boredom for those who are casually browing their PC's, so the game will be designed to provide enough stimulus and excitmement for regular computer users, similar to the solitaire suite.
+
+\subsubsection{Other Stakeholders}
+
+Other stakeholders include 3rd party Desktop game distribution stores,\textcolor{red}{such as Google Play and the Apple store,} and open source project banks which may make use of this project for development purposes:
+
+\begin{itemize}
+\item 3rd party desktop game distribution stores.
+\item Game Testers.
+\item Technology Experts [Part of Project Team].
+\item Usability experts.
+\item Dr. Bokhari.
+\item Project Development Experts: This can include teaching assistants, the professor, experienced peers and so on.
+\end{itemize}
+
+
+\subsection{Mandated Constraints}
+
+Some constraints that apply to the project include the following:
+
+\begin{itemize}
+\item No project budget provided; Project cannot use costly API memberships or resources.
+\item Application should take less than 400MB of storage space to meet requirements.
+\item The project must be completed within a 4-month period.
+\item Limited resources in terms of domain experts, specifically in graphic design.
+\item Application will be developed for one OS due to time constraint.
+\item open source project must be translated to Python due to development language and scope.
+\end{itemize}
+
+\subsection{Naming Conventions and Terminology}
+
+The naming conventions listed below will be used to clearly define words and termiology that will come up in the project development process. Below is a list
+of naming conventions, terms, and special vocabularly and their meaning. Since the desktop application is straighforward, there is not much terminology being
+used as of now:
+
+\begin{itemize}
+\item DDS: Digital Distribution Service such as play store, microsoft play, etc.
+\item OS: Operating System.
+\item Python: The programming language used for application development.
+\item Pygame: Computer graphics Python library.
+\textcolor{red}{\item HTML: The standard markup language for creating Web pages. HTML stands for Hyper Text Markup Language.
+\item CSS: Cascading style sheets (CSS) are used to format the layout of Web pages.
+\item JS: Javascript is the programming language of HTML and the Web.}
+\item Snake 2.o: The desktop application being developed in Python.
+\item UI: The user interface graphics developed using Pygame.
+\item The source game: The open source original Python snake game being used for this project.
+\end{itemize}
+
+\subsection{Relevant Facts and Assumptions}
+
+Some factors that might affect the outcome of the product are listed as follows:
+\begin{itemize}
+\item DDS contribution will be necessary for the public release of the game.
+\item Contribution of  the development team will affect the outcome of the product.
+\item Feedback from game testers.
+\item Availability of resources from pygame library to replicate front-end design in HTML,CSS and JS.
+\item Time remaining once initial objectives and goals are met. This could affect which additional functionality is added.
+\end{itemize}
+
+ There are also assumptions that pertain to the intended operational environment and anything affecting the product:
+\begin{itemize}
+\item Pygame library offers enough functionality to recreate the web app graphics in Python.
+\item The user is using Windows for game execution otherwise they must compile the source code to run the application.
+\item The application will not be an exact replica of the source game. Added functionality and a change of graphics is expected.
+\item The game application will prioritize the completion of the snake game as the central attraction.
+\end{itemize}
+
+Some user characteristics will affect the final deisgn and written requirements:
+\begin{itemize}
+\item Users expect the game to be responsive and timely due to the nature of wanting quick stimulus .
+\item The game should have an attractive user inteface due to the nature of the users expectations. It is mainly used for entertainment and should
+have a smooth user-interface.
+\end{itemize}
+
+\section{Functional Requirements}
+
+\subsection{The Scope of the Work and the Product}
+
+\subsubsection{The Context of the Work}
+The scope of the project is deliver a Product that has the requirement documentation, and a desktop application that can be installed on a user's system.\\
+\\To achieve the goals of the Product, the following are decided to be the deadlines of the goal to be on the track:\\
+$\bullet$ Development Plan \date{28/09/18}\\
+\\$\bullet$ Requirements Document Revision \date{05/10/18}\\
+\\$\bullet$ Proof of Concept Demonstration \date{16/10/18}\\
+\\$\bullet$ Test Plan Revision \date{26/10/19}\\
+\\$\bullet$ Design \& Document Revision \date{09/11/18}\\
+\\$\bullet$ Revise all the Documentation \date{13/11/18}\\
+\\$\bullet$ Final Documentation \date{06/12/18}\\
+
+\subsubsection{Work Partitioning}
+%breakdown your task into sub-task e.g. break logic and user interface
+The desktop application involves different processes to successfully run: making a user-interface so the user can interact with the application, \textcolor{red}{Back-End Development} that can handle all the inputs given by the user and \textcolor{red}{updates the interface} according to the requirements.
+These tasks can be divided into sub-task. For example, \textcolor{red}{the system uses a mouse as an input, so whenever the user presses a button on the interface from its computer's mouse, there is an update in the display making the user engaged to the application. Tasks such as displaying the food, making the snake appear at random locations, in the beginning, should all be divided and can be accomplished individually by the developers, this would be more efficient to complete the project, and the respective developer would know how to test the functions they created}.
+\subsubsection{Individual Product Use Cases}
+%
+The user can use the system-to-be (the desktop application) to entertain themselves when they are bored. They can use the system to improve their response time, with playing the game in difficulty modes it can be more challenging and the user has to be fast. In addition, the desktop application would be a fun means of entertainment between friends as they can play turn-by-turn and challenge each other.
+\subsection{Functional Requirements}
+
+
+$\bullet$ Requirement number: FR(Functional Requirement)1\\
+\textcolor{red}{When the user sees the interface, they can select the buttons on the screen by using the computer's mouse.}\\
+
+$\bullet$ Requirement number: FR2\\
+The user can press the UP key to move the snake's direction in the upwards direction.\\
+
+$\bullet$ Requirement number: FR3\\
+The user can press the DOWN key to move the snake in the downwards direction.\\
+
+$\bullet$ Requirement number: FR4\\
+The user can press the LEFT key to move the snake in the left direction.\\
+
+$\bullet$ Requirement number: FR5\\
+The user can press the \textcolor{red}{RIGHT} key to move the snake in the right direction.\\
+
+$\bullet$ Requirement number: FR6\\
+The game should display the user's highest score.\\
+
+$\bullet$ Requirement number: FR7\\
+The initial location of the snake should be random whenever the user starts the game or when it restarts.\\
+
+$\bullet$ Requirement number: FR8\\
+The user has the option to play in three different modes: \textcolor{red}{easy, intermediate and advanced.}\\
+
+$\bullet$ Requirement number: FR9\\
+\textcolor{red}{The desktop application shall provide a facility to play the game in different themes, e.g., Dark or Light, or choose the random option to select either theme.}\\
+
+$\bullet$ Requirement number: FR10\\
+\textcolor{red}{When the snake eats its food, its length should be increased by 3 units. For instance, when the game is started the snake’s length is only 1 unit, but after eating a block of food, its new length should be 4 units.}\\
+
+$\bullet$ Requirement number: FR11\\
+\textcolor{red}{Once the snake eats its food, the food should reappear on the screen.}\\
+
+$\bullet$ Requirement number: FR12\\
+\textcolor{red}{When the user is playing the game in easy mode, the snake is allowed to move within the screen size and can pass the boundaries (the window screen edges), if the snake traverses the boundary it should reappear from the opposite direction.}\\
+
+$\bullet$ Requirement number: FR13\\
+\textcolor{red}{When the user is playing the game in either intermediate or advanced mode, the snake is allowed to move within the screen size and cannot pass the boundaries (the window screen edges), if the snake traverses the boundary it should die, and a message should prompt on the screen to restart the game.}
+
+$\bullet$ Requirement number: FR14\\
+\textcolor{red}{When the user is playing the game in advanced mode, the game shall offer a maze within the Gameplay to restrict the snake's location and make it more challenging.}
+
+$\bullet$ Requirement number: FR15\\
+If the snake bites itself, the game should be over and a message should prompt on the screen to restart the game.\\
+
+$\bullet$ Requirement number: FR16\\
+\textcolor{red}{The highest score of the user shall be saved in a text file.}\\
+
+$\bullet$ Requirement number: FR17\\
+\textcolor{red}{The user can view their highest score from the main menu by pressing the Highscore button.}\\
+
+$\bullet$ Requirement number: FR18\\
+\textcolor{red}{The color of the snake changes when a different theme is selected.}\\
+
+
+\section{Non-functional Requirements}
+
+\subsection{Look and Feel Requirements}
+
+\subsubsection{Appearance Requirements :\textcolor{red}{NFR1}}
+
+ \textcolor{red}{In each UI component, such as the main screen, gameplay screen and exit screen, the color scheme shall be chosen using color theory to reveal a pleasant appearance. The scheme can differ between UI components but fonts should stay consistent throughout and only a few colors shall be used altogether. }
+
+
+\textcolor{red}{Fit Criterion: No more than 8 colors used in the UI and the color scheme of UI components. At most, 2 fonts will be used at all times across all UI components}
+\subsubsection{Style Requirements:\textcolor{red}{NFR2}}
+
+The product should be given a modern style by adding a nice background to it with a user-friendly interface.
+
+\textcolor{red}{Fit Criterion: The background shall be composed of a solid color background or a background containing one object to give off a modern, simplistic look }
+\subsection{Usability and Humanity Requirements:\textcolor{red}{NFR3}}
+
+The application must be simple for a person aged 10 or above. It should be understandable by any person within the age group who is familiar to the technology. No feature should restrict the player to a non-knowledgeable outcome.
+
+\textcolor{red}{Fit Criterion: People with different age group will be requested to play the game and rate it.}
+\subsection{Performance Requirements}
+
+\subsubsection{Speed Requirements:\textcolor{red}{NFR4}}
+
+\begin{description}
+	
+	\item[$\bullet$] All valid interaction should have a maximum response time of half a second.
+	
+	\item[$\bullet$] The speed for snake should be customizable by the user and should not increase or decrease by itself.
+	
+	\textcolor{red}{Fit Criterion: The buttons should respond within half a second and modes with different speed will be available.}
+\end{description}
+
+\subsubsection{Safety Critical requirements :\textcolor{red}{NFR5}}
+
+The game shall not consume any private data from the user's device. 
+
+\textcolor{red}{Fit Criterion: The game can not interfere with user's private data}
+\subsubsection{Precision Requirements :\textcolor{red}{NFR6}}
+
+ The turn for snake should match with the users key and should be done as precisely as possible.
+
+\textcolor{red}{Fit Criterion: There should be no lag between the press of the button and snake's movement.}
+\subsubsection{Reliability and Availability Requirements :\textcolor{red}{NFR7}}
+
+The game should be available 24 hours, 365 days per year to the user.
+
+\textcolor{red}{Fit Criterion: The game can be played any time of the day, on any day.}
+\subsubsection{Capacity Requirements :\textcolor{red}{NFR8}}
+
+The game shall not overload the clients device's memory. 
+
+\textcolor{red}{Fit Criterion: The game must not take more than 20MB of the users storage.}
+\subsection{Operational and Environmental Requirements}
+
+\subsubsection{Expected Physcial environment :\textcolor{red}{NFR9}}
+
+The application is intended to be used anywhere, at any desktop device. It can be used in any climatic condition from harsh summers to chilly winter( given that the device is working as well).
+
+\textcolor{red}{Fit Criterion: The game should work under any environmental conditions.}
+\subsubsection{Expected Technological environment :\textcolor{red}{NFR10}}
+
+This application should work on any desktop device as long as the device is working.
+
+\textcolor{red}{Fit Criterion: The game should work on all the working devices supported by the software.}
+\subsection{Maintainability and Support Requirements}
+
+\subsubsection{Maintainability :\textcolor{red}{NFR11}}
+
+The application shall require minimum maintenance. Also, the application shall be revised every year. \textcolor{red}{Also, the code should be heavily commented in order to provide ease to the developer/maintainer.}
+
+\textcolor{red}{Fit Criterion: Doxygen commenting should be done to ease maintainability.}
+\subsubsection{Portability :\textcolor{red}{NFR12}}
+
+The application is expected to run on Windows, Mac OS and Linux environment.
+
+\textcolor{red}{Fit Criterion: The game must run on MacOD, Windows and Linux.}
+\subsection{Security Requirements :\textcolor{red}{NFR13}}
+
+This is an open-ended application. However, the application must not break the privacy policy by interfering with files stored on the desktop. 
+
+\textcolor{red}{Fit Criterion: The system can not interfere with user's privacy}
+\subsection{Cultural Requirements :\textcolor{red}{NFR14}}
+
+The application will not use any kind of communicating data that will offend any religion, country or user in any way. The product will give a detailed explanation in case of use of any cultural or political symbol.
+
+\textcolor{red}{Fit Criterion: The system must not contain anything that can offend any subject.}
+\subsection{Legal Requirements :\textcolor{red}{NFR15}}
+
+The application shall comply with all national and federal laws. In addition, the application must agree to the MIT Open License.
+
+\textcolor{red}{Fit Criterion: The system must obey laws and have an open License.}
+\subsection{Health and Safety Requirements :\textcolor{red}{NFR16}}
+
+\textcolor{red}{This software should not affect the health of the user by any means. Color contrast ratio between colors used in the game  is at a minimum of 4.5:1 according to G18 of the W3C Web Content Accessibility Guidelines 2.0}
+
+\textcolor{red}{Fit Criterion: The system must not harm an individuals health in any way.}
+\section{Project Issues}
+
+\subsection{Open Issues}
+Below is a list of open issues pertaining to the project scope:
+\begin{itemize}
+\item Investigating and understanding the capabilities of the Pygame library is yet to be completed.
+\item Integrating additional features is not decided on as of yet. It is dependant on time constraints.
+\item snake-game multiplayer mode is an open issue on the open source project which we may or may not choose to implement as time permits.
+
+\end{itemize}
+\subsection{Off-the-Shelf Solutions}
+
+Although there are available solutions on developing such a game, the project team is aiming to enhance the game by producing a desktop version with 
+added functionality.
+
+Ready-made simple implementations of the projects are available and can be used as reference but otherwise, enhanced features will have to be created from scratch (light/ dark theme, custom player settings, high scores and so on).
+
+\subsection{New Problems}
+
+\subsubsection{Effects on the Current Environment}
+
+The Microsoft Store contains the "250k snake" app for windows, an implementation of the old-school snake game. Aside from this application, other applications that appear when searching "snake" or "snake game" do not reflect the classical snake game. By developing the snake game as a desktop app, we will be able to provide game shoppers with more options to pick from. 
+
+\subsubsection{Effects on the Installed Systems}
+
+The existance of the 250k snake will make it difficult to push the project team's implementation of the game, Snake 2.o, into the microsoft store market successfully. However, the new snake game will fill a niche for cutsomizability by allowing users to pick from many different settings. 
+
+\subsection{Tasks}
+
+An article on linkedIn by Sumit Jain summarizes the steps involved in the game development process [ ~\cite{devArticle} ]. In his article, he outlines 6 main steps to the game development cycle: Idea \& Story, Conceptualize \& Design, Technical Analysis, Development, Testing, Deployment. Considering the project scope and the redevelopment of the snake game, the main three steps involved in the developement cycle are the following:
+\begin{itemize}
+\item Technical Analysis: Use reverse engineering to understand how the game was originally built and analyze the main modules/ framework used to develop the game.
+\item Development: Using Python and Pygame to develop the source code for the game; Analysis from the previous step will be necessary to break down the developement process.
+\item Testing: Test using principles of white box and black box testing. In further developments, this would also include intergation testing with the user interface and the collection of modules created for the application. 
+\end{itemize}
+
+Project members should expect the development cycle to resemble the previously mentioned framework. Once the cycle has been iterated until completion of Snake 2.o, the team will move on to the deployment stage, considering options for making the game available on a DDS such as the Microsoft Store.   
+
+\subsection{Migration to the New Product}
+
+Snake 2.o will be require the following conversion tasks:
+\begin{itemize}
+\item Converting JS,HTML and CSS graphics and animations to Pygame graphics.
+\item Comverting the source project into modularized step-based tasks.
+\item Converting from JS,HTML and CSS source code to Python source code.
+\end{itemize}
+
+The source project will be run with Snake 2.o for performance comparison and visual feedback on the accuracy of the redevelopment as well as the enhance features that were added to snake 2.o. 
+
+\subsection{Risks}
+
+Snake 2.o will be a classical desktop application and therefore does not present many risks to the user or any stakeholders involved. In terms of taking risk to advance the project, there is risk in striving for the completion of a multiplayer mode for the game since it may take substantial time and effort. However, this risk is low since the project requirements have already been met and other features of the game have been enhanced, aside from the addition of a multiplayer mode. 
+
+In the case that more risks are perceived in the future, the project team will take the following course of action to come up with early warnings:
+\begin{itemize}
+\item If the development is taking place 1 week prior to the project deadline, an early warning will be issued and the group must decide to continue or dismiss the development.
+\item If the development is currently taking place with 2 weeks left until the project deadline and less than 50\% of the development is in place, it will be dismissed.
+\item If the main project is missing any component (testing, code modularization, documentation, commenting, etc.) no development will proceed until the main requirements (minimum requirements) are met.
+\item If any of the main project components are deemed to have lower quality, a warning is issued and the team members must discuss whether to continue with further development or improving the existing product.
+\end{itemize}
+
+\subsection{Costs}
+As mentioned in the development plan document, team members will be dedicating 2 hours outside of lab time for team meetings and discussions along with 5 hours of individual work on the project itself. Since the project is open source and uses open libraries such as Pygame, the monetary cost is \$0. However, there may be additional costs to publishing Snake 2.o with a DDS.
+
+\subsection{User Documentation and Training}
+
+The user will be provided with the following documentation and training:
+\begin{itemize}
+\item Snake 2.o User Manual: The document will explain the basic permisses of the game, user settings, graphic themes, menu headings, and any other information necessary for the user to understand the features of the game.
+\item Snake 2.o Installation Manual: Provided that the user will not be using Windows or the native OS that is decided on, this document will provide simple installation instructions for compiling the code on different OS's.
+\end{itemize}
+
+\subsection{Waiting Room}
+In future releases of the project, the following requirements might be included in the revised requirements document:
+\begin{itemize}
+\item Snake 2.o User Manual - Multiplayer Mode: A section explaining how to connect and play the snake game with friends
+\item additional 'multiplayer mode' module: A separate module to encapsulate the multiplayer mode
+\item additional 'themes' module - a module encapsulating the different graphic themes available for the game
+\end{itemize}
+
+
+\subsection{Ideas for Solutions}
+
+Some rudimentary ideas for project modules and solutions have been mentioned down below:
+\begin{itemize}
+\item Classes/modules for individual objects like the snake, food block, the frame, the menu bar, the settings bar and so on.
+\item import graphics developed in adobe illustrator into the game as characters, props and so on.
+\item the snake class can have method that correspond to the snakes functionality such as moveLeft, moveRight, moveUp, moveDown, and Lengthen.
+\item the food item can have a randomPlacement method for when being placed at random around the window.
+\item UI: a custom header section can contain the entry fields for custom speed and other important parameters.
+\end{itemize}
+
+\bibliographystyle{plainnat}
+
+
+\newpage
+
+\section{Appendix}
+
+\textcolor{red}{N/A}
+
+\subsection{Symbolic Parameters}
+
+\textcolor{red}{
+\begin{itemize}
+\item NFR - Nonfunctional requirement
+\item FR - Functional requirement
+\item *Any acronym used in the Naming Conventions and Terminology section (i.e. HTML, CSS , JS etc.)
+\end{itemize}
+}
+
+\end{document}
